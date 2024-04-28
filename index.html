@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body { 
             line-height: 1.4;
@@ -43,7 +44,28 @@
         ul.nested-list {
             margin-left: 20px; /* Adjust the indentation distance */
         }
+
+        /* Media query for mobile devices */
+        @media (max-width: 600px) {
+            body {
+                font-size: 16px; /* Adjust font size for smaller screens */
+                padding: 0 5px; /* Reduce padding */
+            }
+
+            #maincontent {
+                margin: 10px auto; /* Adjust margins */
+            }
+
+            header {
+                padding: 0.5rem; /* Reduce padding */
+            }
+
+            ul.nested-list {
+                margin-left: 10px; /* Adjust indentation */
+            }
+        }
     </style>
+
     <title>Alex Mathew</title>
 </head>
 <body class="vsc-initialized">
