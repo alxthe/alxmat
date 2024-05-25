@@ -2,140 +2,236 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
     <style>
         body { 
-            line-height: 1.4;
-            font-family: normal, serif;
-            font-size: 18px;
+            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
+            font-size: 17px;
             padding: 0 10px;
-            margin: 100px auto;
-            max-width: 650px;
-            background-color: #171919;
-            color: #ffffff;
+            margin: 90px auto;
+            max-width: 600px;
+            /* Default to dark mode */
+            background-color: #1e1e1e;
+            color: #f5f5f5;
         }
-    
+
+       .light-mode {
+            background-color: #ffffff;
+            color: #1e1e1e;
+        }
+
+       .dark-mode {
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+        }
+
         #maincontent {
-            max-width:42em;
-            margin:15 auto;
+            max-width: 42em;
+            margin: 15px auto;
         }
 
         header {
-            background-color: #171919;
-            padding: 1rem;
+            padding: 2rem;
             text-align: center;
         }
 
-        a:link {
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            margin: 0 10px;
+        }
+
+        a {
             color: #00a2ff;
             background-color: transparent;
             text-decoration: none;
+            transition: color 0.3s, text-decoration 0.3s;
         }
 
-        a:visited {
-            color: rgb(219, 192, 255);
-            background-color: transparent;
-            text-decoration: none;
-        }
         a:hover {
             color: #ADD8E6;
-            background-color: transparent;
             text-decoration: underline;
         }
-        ul.nested-list {
-            margin-left: 20px; /* Adjust the indentation distance */
+
+        ul {
+            padding-left: 20px;
         }
 
-        /* Media query for mobile devices */
+        ul.nested-list {
+            margin-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+
+       .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+       .social-icons a {
+            color: #f5f5f5;
+            font-size: 30px;
+        }
+
         @media (max-width: 600px) {
             body {
-                font-size: 16px; /* Adjust font size for smaller screens */
-                padding: 0 5px; /* Reduce padding */
+                font-size: 16px;
+                padding: 0 5px;
             }
 
             #maincontent {
-                margin: 10px auto; /* Adjust margins */
+                margin: 10px auto;
             }
 
             header {
-                padding: 0.5rem; /* Reduce padding */
+                padding: 1rem;
             }
 
             ul.nested-list {
-                margin-left: 10px; /* Adjust indentation */
+                margin-left: 10px;
             }
         }
     </style>
-
     <title>Alex Mathew</title>
 </head>
-<body class="vsc-initialized">
+<body>
     <header>
+        <!--nav>
+            <ul>
+                <li><a href="#about-me">About Me</a></li>
+                <li><a href="#past-work">Past Work</a></li>
+                <li><a href="#current-work">Current Work</a></li>
+                <li><a href="#value-system">Value System</a></li>
+                <li><a href="#beliefs">Beliefs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav-->
+    
         <h1>Alex Mathew</h1>
-        <p style="font-family:Poppins">i'm a 15 year old deep in the intersection of artificial intelligence and human intelligence (philosophy, psychology, neuroscience, AI, and whatever else interests me!).</p>
+        <p>i'm a 15 year old deep in the intersection of artificial intelligence and human intelligence (philosophy, psychology, neuroscience, AI, and whatever else interests me!).</p>
+        <!-- Theme Toggle Button >
+        <button id="theme-toggle">Switch Theme</button-->
     </header>
-    <div id="maincontent" style="margin-top:70px">    
-        
+    <div id="maincontent">    
         <h3>a bit about me:</h3>
         <ul>
             <li>based in Austin, TX</li>
-            <li>i am: a lifelong learner, a classical guitarist (10 yrs of experience), a <a href = https://www.figma.com/proto/K3aaxTlSYzGuTrKXlDYwWI/photography-porfolio?node-id=1-58&scaling=contain>photographer</a>, videographer, walker, and a people lover</li>
-            <li>i love TV/Movies, especially: "Rick and Morty", "The Good Place", Studio Ghibli movies, & "Everything, Everywhere, All At Once"</li>
-            <li>i love food, especially: xialongbao, Kerela fish curry, mankosha, & bimbimbap</li>
-            <li>i love music, especially: my <a href = https://bit.ly/alxspotify>snoopy playlists</a></li>
-            <li>an article i live by: <a href = https://hbr.org/2007/10/manage-your-energy-not-your-time>manage energy, not time</a> (create good habits!)</li>
-            <li>fun fact: in my free time i take notes on Mr. Beast videos, Ryan Trahan videos, and Pixar movies to improve my content :-)</li>
-            
+            <li>i am: a lifelong learner, home cook, graphic designer, a classical guitarist (10 yrs of experience), a <a href="https://www.figma.com/proto/K3aaxTlSYzGuTrKXlDYwWI/photography-porfolio?node-id=1-58&scaling=contain">photographer</a>, walker, and a people lover</li>
+            <li>i love tv & film, especially:</li>
+            <ul class="nested-list">
+                <li>Rick and Morty</li>
+                <li>The Office</li>
+                <li>The Good Place</li>
+                <li>Everything, Everywhere, All At Once</li>
+            </ul>
+            <li>i love food, especially:</li>
+            <ul class="nested-list">
+                <li>chinese: xialongbao, peking duck, mapo tofu</li>
+                <li>indian: Kerela style fish curry, mango pickle, methi chapati</li>
+                <li>mediterranean: dolma, tabbouleh salad, kafta, baklava</li>
+                <li>korean: bimbimbap, tteokbokki, galbi</li>
+            </ul>
+            <li>i love music, especially my <a href="https://bit.ly/alxspotify">Snoopy playlists</a></li>
+            <li>this is an <a href="https://hbr.org/2007/10/manage-your-energy-not-your-time">article by HBR</a> i live by which i've used to create good habits</li>
+            <li>fun fact: in my free time i take notes on Mr. Beast videos, Ryan Trahan videos, and Pixar movies to improve my content</li>
         </ul>
-    
 
         <h3>my past work:</h3>
         <ul>
-            <li>built a <a  href = https://medium.com/@alexbmaustin/i-made-an-ai-model-that-can-predict-if-you-have-a-brain-tumor-7a5faa639f61>brain tumor detection CNN</a> trained on 4000+ images</li>
-            <li>built <a href = https://medium.com/@alexbmaustin/how-i-built-a-brain-computer-interface-to-control-my-music-26e763322a96>NeuroHarmony</a>, a program that plays music based off of your focus levels, measured with a muse 2 headband</li>
-            <li>won the <a href = https://neurotechx.com/hackathon2023>2023 NeurotechX Global Hackathon</a> against collegiate engineers from UPenn, Oxford, etc. and adults with <a href = https://docs.google.com/presentation/d/1_kmya6E3QTsPZO5I-jVOsccsR-l0VY694gIsY_paiJs/edit#slide=id.g15075a5e8df_0_32>brainspace</a></li>
-            <li>worked alongside Meta and pitched an idea to implement an <a href = https://docs.google.com/presentation/d/1qs60gRKxlf_QXG1gQ5MAbN8P6qNmG0_3gqx8GCak8js/edit?ouid=108907359021770681550&usp=slides_home&ths=true>AI voice moderation</a> system in their Meta Quest 3 headsets to two Meta Oversight Board executives</li>
+            <li>built a <a href="https://medium.com/@alexbmaustin/i-made-an-ai-model-that-can-predict-if-you-have-a-brain-tumor-7a5faa639f61">brain tumor detection CNN</a> trained on 4000+ images</li>
+            <li>built <a href="https://medium.com/@alexbmaustin/how-i-built-a-brain-computer-interface-to-control-my-music-26e763322a96">NeuroHarmony</a>, a program that plays music based off of your focus levels, measured with a Muse 2 headband</li>
+            <li>won the 2023 NeurotechX Global Hackathon against engineers from UPenn, Oxford, etc. and adults with <a href="https://docs.google.com/presentation/d/1_kmya6E3QTsPZO5I-jVOsccsR-l0VY694gIsY_paiJs/edit#slide=id.g15075a5e8df_0_32">brainspace</a></li>
+            <li>worked alongside Meta and pitched an idea to implement an <a href="https://docs.google.com/presentation/d/1qs60gRKxlf_QXG1gQ5MAbN8P6qNmG0_3gqx8GCak8js/edit?ouid=108907359021770681550&usp=slides_home&ths=true">AI voice moderation</a> system in their Meta Quest 3 headsets to two Meta Oversight Board executives</li>
         </ul>
 
-        <h3>what i'm working on now:</h3>
+        <h3>my work now:</h3>
         <ul>
-            <li>working on <a href = https://tranquility.framer.ai>serenity,</a> the world's first real AI therapist (no, not replacing real therapists)</li>
-            <li>working at <a href = https://www.biobqing.com>BioBq,</a> a cellular agriculture startup making lab-grown brisket, to optimize bioreactor + production processes using ML</li>
-            <li>working at <a href = https://www.snap.com>Snap,</a> (inspired by Meta challenge above) on the Youth Digital Advisory Board (1 of 15 around the U.S.) to create a safer digital environment</li>
-            <li>working at <a href = https://www.athena-edtech.com>Athena,</a> to build an AI learning platform for K-12 teachers</li>
-            <li>working on side projects as a <a href = https://www.tks.world>TKS</a> student where I am currently working on <a href = https://neurenew.framer.website>NeuRenew</a> with some of my closest friends</li>
+            <li>working on <a href="https://tranquility.framer.ai">serenity,</a> the world's first real AI therapist that aims to provide mental clarity to anyone with a phone</li>
+            <li>working at <a href="https://www.biobqing.com">BioBq,</a> a cellular agriculture startup making lab-grown brisket, to optimize production processes using ML</li>
+            <li>working at <a href="https://www.snap.com">Snap,</a> on the Council for Digital Well Being (1/18 in the U.S.) to create a safer digital environment</li>
+            <li>working at <a href="https://www.athena-edtech.com">Athena,</a> to build an AI learning platform for K-12 teachers</li>
+            <li>working on side projects and self-development as a <a href="https://www.tks.world">TKS</a> student</li>
         </ul>
-       
-        <h3>my value system (the 3 "c"s):</h3>
+
+        <h3>my value system (the 3 Cs):</h3>
         <ul>
             <li>curiosity</li>
-            <ul>
+            <ul class="nested-list">
                 <li>never quenching curiosity leads me to find the best people and the greatest challenges</li>
                 <li>fuels the world's greatest creations</li>
                 <li>is the way to create new doors to enter and do what you love</li>
             </ul>
             <li>conversations</li>
-            <ul>
-                <li>authentic ones offer moments of serendipity that create the best relationships</li>
-                <li>lead to the best feelings of peace, passion, or love</li>
-                <li>are my favorite way to reflect on my character</li>
+            <ul class="nested-list">
+                <li>authentic conversations and relationships offer moments of serendipity that create the best relationships</li>
+                <li>they lead to the best feelings of peace, passion, or love </li>
+                <li>conversations are my favorite way to reflect on my character</li>
             </ul>
             <li>creating</li>
             <ul>
-                <li>can come in any shape or form (even food, yum), but is only pristine when it was made out of pure authenticity and good intentions</li>
-                <li>is the time to let your true unrealistic, ambitious, crazy self go wild</li>
-                <li>abolishing sheep mentality and external validation that's built as a kid and practice <a href = https://paulgraham.com/think.html>independent thinking</a></li>
+                <li>creations can come in any shape or form (even food, yum), but is only pristine when it was made out of pure authenticity and good intentions. my outlets are coding, photography, and graphic design.</li>
+                <li>creativity is where you let your true unrealistic, ambitious, crazy self go wild</li>
+                <li>abolishing sheep mentality and external validation that's built as a kid and practice <a href="https://paulgraham.com/think.html">independent thinking</a></li>
             </ul>
         </ul>
-        <h3>some random thoughts:</h3>
+
+        <h3>some of my beliefs:</h3>
         <ul>
             <li>human potential is extremely wasted, my goal is to maximize our potential so we can live happier, more fulfilled lives</li>
-            <li>right now i am doing this through working on serenity, in aims to provide mental clarity to everyone with a smartphone</li>
             <li>faith is the process of embracing uncertainty</li>
+            <li>appreciation & gratefulness unlocks the key to real happiness which can only come from deep introspection</li>
             <li>my true passion is helping people. because i have the privelage of a good background and choice in my life, i have the capability to help others at a big scale :)</li>
-            <li>really interesting problems to solve: mental health, poverty, creating better education system, solar panel efficiency, meat production emissions, neurodegenerative diseases, homelessness</li>
+            <li>learning is different for everyone and learning to learn is crucial. for example i think in bullet points, images, and conversation. i learn with the feynman technique, active recall with pictures, building projects, and practice tests</li>
         </ul>
 
-        <br>feel free to reach out to me at alexbmaustin@gmail.com
-        <br><br><a href = https://twitter.com/alxmthew>Twitter</a> | <a href = https://linkedin.com/alxmat>LinkedIn</a> | <a href = https://alxmat.substack.com>Substack</a> | <a href = https//alxmat.read.cv>Read.cv</a> | <a href = https://www.instagram.com/alxmthew>Instagram</a>
-        
+        <br>feel free to reach out to me at alexbmaustin@gmail.com! or you can chat with me using one of the platforms below.<br>
+        <section class="mt-8 md:mt-8 w-2/3 lg:w-1/2 md:text-xl">
+            <div class="social-icons">
+                <!-- Icons here -->
+                <a href="https://twitter.com/alxmthew">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"/></svg>
+                </a>
+                
+                <a href="https://www.linkedin.com/in/alxmat/">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-2 -2 24 24"><path fill="currentColor" d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91c-1.182 0-1.886.796-2.195 1.565c-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126c2.815 0 4.926 1.84 4.926 5.792M2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254z"/></svg>
+                </a>
+
+                <a href="https://bookshelf.website/alxmat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M9 3v15h3V3zm3 2l4 13l3-1l-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                </a>
+                
+                <a href="https://instagram.com/alxmthew">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+                </a>
+                
+                <a href="https://github.com/alxthe">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+                </a>
+                
+                <a href="https://www.youtube.com/channel/UCxu_RGPnVSEke61ebevOJPA">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/></svg>
+                </a>
+                
+                <a href="https://alxmat.substack.com">
+                    <svg xmlns="http://www.w3.org/2000/svg" width=".85em" height=".85em" viewBox="0 0 24 24"><path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.812V24L12 18.11L22.54 24V10.812zM22.54 0H1.46v2.836h21.08z"/></svg>
+
+                <a href="https:bit.ly/alxspotify">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6c-.15-.5.15-1 .6-1.15c3.55-1.05 9.4-.85 13.1 1.35c.45.25.6.85.35 1.3c-.25.35-.85.5-1.3.25m-.1 2.8c-.25.35-.7.5-1.05.25c-2.7-1.65-6.8-2.15-9.95-1.15c-.4.1-.85-.1-.95-.5s.1-.85.5-.95c3.65-1.1 8.15-.55 11.25 1.35c.3.15.45.65.2 1m-1.2 2.75c-.2.3-.55.4-.85.2c-2.35-1.45-5.3-1.75-8.8-.95c-.35.1-.65-.15-.75-.45c-.1-.35.15-.65.45-.75c3.8-.85 7.1-.5 9.7 1.1c.35.15.4.55.25.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
+                </a>
+            </div>
+        </section>
+                
     </div></body></html>
