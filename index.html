@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
-<head>
+<html><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&amp;display=swap" rel="stylesheet">
     <!-- Include Font Awesome for social media icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body { 
             line-height: 1.6;
@@ -73,17 +72,33 @@
             margin-bottom: 10px;
         }
 
-
-       .social-icons {
+        .social-icons {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin-top: 30px;
         }
 
-       .social-icons a {
+        .social-icons a {
             color: #f5f5f5;
             font-size: 30px;
+        }
+
+        .work-gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .work-gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .work-gallery img:hover {
+            transform: scale(1.05);
         }
 
         @media (max-width: 600px) {
@@ -103,11 +118,15 @@
             ul.nested-list {
                 margin-left: 10px;
             }
+
+            .work-gallery {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <title>Alex Mathew</title>
 </head>
-<body>
+<body class="vsc-initialized" style="overscroll-behavior-x: auto;">
     <header>
         <!--nav>
             <ul>
@@ -129,8 +148,8 @@
         <h3>a bit about me:</h3>
         <ul>
             <li>based in Austin, TX</li>
-            <li>i am: a lifelong learner, home cook, graphic designer, a classical guitarist (10 yrs of experience), a <a href="https://www.figma.com/proto/K3aaxTlSYzGuTrKXlDYwWI/photography-porfolio?node-id=1-58&scaling=contain">photographer</a>, walker, and a people lover</li>
-            <li>i love tv & film, especially:</li>
+            <li>i am: a lifelong learner, home cook, graphic designer, a classical guitarist (10 yrs of experience), a <a href="https://www.figma.com/proto/K3aaxTlSYzGuTrKXlDYwWI/photography-porfolio?node-id=1-58&amp;scaling=contain">photographer</a>, walker, and a people lover</li>
+            <li>i love tv &amp; film, especially:</li>
             <ul class="nested-list">
                 <li>Rick and Morty</li>
                 <li>The Office</li>
@@ -155,7 +174,7 @@
             <li>built a <a href="https://medium.com/@alexbmaustin/i-made-an-ai-model-that-can-predict-if-you-have-a-brain-tumor-7a5faa639f61">brain tumor detection CNN</a> trained on 4000+ images</li>
             <li>built <a href="https://medium.com/@alexbmaustin/how-i-built-a-brain-computer-interface-to-control-my-music-26e763322a96">NeuroHarmony</a>, a program that plays music based off of your focus levels, measured with a Muse 2 headband</li>
             <li>won the 2023 NeurotechX Global Hackathon against engineers from UPenn, Oxford, etc. and adults with <a href="https://docs.google.com/presentation/d/1_kmya6E3QTsPZO5I-jVOsccsR-l0VY694gIsY_paiJs/edit#slide=id.g15075a5e8df_0_32">brainspace</a></li>
-            <li>worked alongside Meta and pitched an idea to implement an <a href="https://docs.google.com/presentation/d/1qs60gRKxlf_QXG1gQ5MAbN8P6qNmG0_3gqx8GCak8js/edit?ouid=108907359021770681550&usp=slides_home&ths=true">AI voice moderation</a> system in their Meta Quest 3 headsets to two Meta Oversight Board executives</li>
+            <li>worked alongside Meta and pitched an idea to implement an <a href="https://docs.google.com/presentation/d/1qs60gRKxlf_QXG1gQ5MAbN8P6qNmG0_3gqx8GCak8js/edit?ouid=108907359021770681550&amp;usp=slides_home&amp;ths=true">AI voice moderation</a> system in their Meta Quest 3 headsets to two Meta Oversight Board executives</li>
         </ul>
 
         <h3>my work now:</h3>
@@ -165,7 +184,7 @@
             <li>working at <a href="https://www.snap.com">Snap,</a> on the Council for Digital Well Being (1/18 in the U.S.) to create a safer digital environment</li>
             <li>working at <a href="https://www.athena-edtech.com">Athena,</a> to build an AI learning platform for K-12 teachers</li>
             <li>working on side projects and self-development as a <a href="https://www.tks.world">TKS</a> student</li>
-            <li>i love volunteering and i'm the VP of the teen advisory board @ <a href = https://www.generationserve.org/>generation serve</a>. we help facilitate all volunteering events, fundraise, and make sure every event is full w/ outreach :)</li>
+            <li>i love volunteering and i'm the VP of the teen advisory board @ <a href="https://www.generationserve.org/">generation serve</a>. we help facilitate all volunteering events, fundraise, and make sure every event is full w/ outreach :)</li>
         </ul>
 
         <h3>my value system (the 3 Cs):</h3>
@@ -194,51 +213,61 @@
         <ul>
             <li>human potential is extremely wasted, my goal is to maximize our potential so we can live happier, more fulfilled lives</li>
             <li>faith is the process of embracing uncertainty</li>
-            <li>appreciation & gratefulness unlocks the key to real happiness which can only come from deep introspection</li>
+            <li>appreciation &amp; gratefulness unlocks the key to real happiness which can only come from deep introspection</li>
             <li>my true passion is helping people. because i have the privelage of a good background and choice in my life, i have the capability to help others at a big scale :)</li>
             <li>learning is different for everyone and learning to learn is crucial. i believe all learning should be personalized!</li>
             <ul class="nested-list">
                 <li>for example i think in bullet points, images, and active work or conversation and that's why i learn best with the feynman technique, active recall w/ pictures, building projects, and practice tests</li>
             </ul>
-            <li>here are some <a href = "https://alxmat.notion.site/quotes-i-live-by-3f63c2a0155c48a28202f1e9279c1a8f?pvs=4">quotes</a> i live by</li>
-            <li>here are some <a href = "https://bookshelf.website/alxmat">books</a> i've read and am reading now!</li>
+            <li>here are some <a href="https://alxmat.notion.site/quotes-i-live-by-3f63c2a0155c48a28202f1e9279c1a8f?pvs=4">quotes</a> i live by</li>
+            <li>here are some <a href="https://bookshelf.website/alxmat">books</a> i've read and am reading now!</li>
         </ul>
+
+        <h3>pictures of my work:</h3>
+        <div class="work-gallery">
+            <a href="https://bit.ly/cnndetectionvid" target="_blank">
+                <img src="https://github.com/alxthe/alxmat/blob/main/video%20in%20the%20making.png" alt="Brain Tumor Detection CNN">
+            </a>
+            <a href="https://medium.com/@alexbmaustin/how-i-built-a-brain-computer-interface-to-control-my-music-26e763322a96" target="_blank">
+                <img src="https://github.com/alxthe/alxmat/blob/main/i%20love%20tech.JPG" alt="NeuroHarmony">
+            </a>
+            <a href="https://generationserve.org" target="_blank">
+                <img src="https://github.com/alxthe/alxmat/blob/main/volunteering.jpeg" alt="Volunteering">
+            </a>
+            <a href="https://docs.google.com/presentation/d/1qs60gRKxlf_QXG1gQ5MAbN8P6qNmG0_3gqx8GCak8js/edit?ouid=108907359021770681550&amp;usp=slides_home&amp;ths=true" target="_blank">
+                <img src="https://github.com/alxthe/alxmat/blob/main/pov%20meta%20challenge.png" alt="AI Voice Moderation">
+            </a>
+        </div>
 
         <br>feel free to reach out to me at alexbmaustin@gmail.com! or you can chat with me using one of the platforms below.<br>
         <section class="mt-8 md:mt-8 w-2/3 lg:w-1/2 md:text-xl">
             <div class="social-icons">
                 <!-- Icons here -->
                 <a href="https://twitter.com/alxmthew">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M22.46 6c-.77.35-1.6.58-2.46.69c.88-.53 1.56-1.37 1.88-2.38c-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29c0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15c0 1.49.75 2.81 1.91 3.56c-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07a4.28 4.28 0 0 0 4 2.98a8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21C16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56c.84-.6 1.56-1.36 2.14-2.23"></path></svg>
                 </a>
                 
                 <a href="https://www.linkedin.com/in/alxmat/">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-2 -2 24 24"><path fill="currentColor" d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91c-1.182 0-1.886.796-2.195 1.565c-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126c2.815 0 4.926 1.84 4.926 5.792M2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="-2 -2 24 24"><path fill="currentColor" d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91c-1.182 0-1.886.796-2.195 1.565c-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126c2.815 0 4.926 1.84 4.926 5.792M2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254z"></path></svg>
                 </a>
                 
                 <a href="https://instagram.com/alxmthew">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3"></path></svg>
                 </a>
                 
                 <a href="https://github.com/alxthe">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"></path></svg>
                 </a>
                 
                 <a href="https://www.youtube.com/channel/UCxu_RGPnVSEke61ebevOJPA">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m10 15l5.19-3L10 9zm11.56-7.83c.13.47.22 1.1.28 1.9c.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83c-.25.9-.83 1.48-1.73 1.73c-.47.13-1.33.22-2.65.28c-1.3.07-2.49.1-3.59.1L12 19c-4.19 0-6.8-.16-7.83-.44c-.9-.25-1.48-.83-1.73-1.73c-.13-.47-.22-1.1-.28-1.9c-.07-.8-.1-1.49-.1-2.09L2 12c0-2.19.16-3.8.44-4.83c.25-.9.83-1.48 1.73-1.73c.47-.13 1.33-.22 2.65-.28c1.3-.07 2.49-.1 3.59-.1L12 5c4.19 0 6.8.16 7.83.44c.9.25 1.48.83 1.73 1.73"></path></svg>
                 </a>
                 
                 <a href="https://alxmat.substack.com">
-                    <svg xmlns="http://www.w3.org/2000/svg" width=".85em" height=".85em" viewBox="0 0 24 24"><path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.812V24L12 18.11L22.54 24V10.812zM22.54 0H1.46v2.836h21.08z"/></svg>
-
-                <!--a href="https:bit.ly/alxspotify">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="M17.9 10.9C14.7 9 9.35 8.8 6.3 9.75c-.5.15-1-.15-1.15-.6c-.15-.5.15-1 .6-1.15c3.55-1.05 9.4-.85 13.1 1.35c.45.25.6.85.35 1.3c-.25.35-.85.5-1.3.25m-.1 2.8c-.25.35-.7.5-1.05.25c-2.7-1.65-6.8-2.15-9.95-1.15c-.4.1-.85-.1-.95-.5s.1-.85.5-.95c3.65-1.1 8.15-.55 11.25 1.35c.3.15.45.65.2 1m-1.2 2.75c-.2.3-.55.4-.85.2c-2.35-1.45-5.3-1.75-8.8-.95c-.35.1-.65-.15-.75-.45c-.1-.35.15-.65.45-.75c3.8-.85 7.1-.5 9.7 1.1c.35.15.4.55.25.85M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2"/></svg>
-                </a-->
-
-                <a href="https://medium.com/@alexbmaustin">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" color="currentColor"><circle cx="6.5" cy="12" r="4.5"/><ellipse cx="15.5" cy="12" rx="2.5" ry="4.5"/><ellipse cx="21" cy="12" rx="1" ry="4.5"/></g></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width=".85em" height=".85em" viewBox="0 0 24 24"><path fill="currentColor" d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.812V24L12 18.11L22.54 24V10.812zM22.54 0H1.46v2.836h21.08z"></path></svg>
                 </a>
             </div>
         </section>
                 
-    </div></body></html>
+    </div>
+</body></html>
