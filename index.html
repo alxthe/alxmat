@@ -4,16 +4,22 @@
     <title>Alex Mathew</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        :root {
+            --bg: #2e2e2e; /* dark slate */
+            --text: #e5e5e5; /* light gray text */
+            --accent: #4aa0ff; /* link color */
+        }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
             max-width: 600px;
             margin: 40px auto;
             padding: 0 20px;
             line-height: 1.6;
-            color: #333;
         }
         a {
-            color: #1e1e1e;
+            color: var(--accent);
             text-decoration: none;
         }
         a:hover {
@@ -22,42 +28,28 @@
         img {
             margin: 20px 0;
             border-radius: 4px;
+            max-width: 100%;
+            height: auto;
         }
-        h1, h2, h3 {
+        h1, h2 {
             font-weight: 600;
             margin-top: 2em;
             margin-bottom: 0.5em;
+            color: var(--text);
         }
         h1 {
             margin-top: 0.5em;
+            font-size: 2.2rem;
         }
         p {
             margin-bottom: 1.5em;
         }
-        .mission {
-            font-size: 1.2em;
-            line-height: 1.7;
-            margin: 2em 0;
-        }
         .section {
             margin: 2.5em 0;
-        }
-        .values {
-            margin: 2em 0;
-        }
-        .footer {
-            margin-top: 4em;
-            padding-top: 2em;
-            border-top: 1px solid #eee;
-            font-size: 0.9em;
-            color: #666;
         }
         @media (max-width: 600px) {
             body {
                 margin: 20px auto;
-            }
-            .mission {
-                font-size: 1.1em;
             }
             img {
                 max-width: 120px;
@@ -66,33 +58,43 @@
     </style>
 </head>
 <body>
-    <img src="https://github.com/alxthe/alxmat/raw/main/TMZ%205075%20Nov%2012%202024.jpg" alt="alxmat" style="width: 375px; height: 250px; max-width: 100%; height: auto; margin: 20px 0; border-radius: 4px;">
-    
+    <img src="https://github.com/alxthe/alxmat/raw/main/TMZ%205075%20Nov%2012%202024.jpg" alt="Alex Mathew holding tablet">
+
     <h1>Alex Mathew</h1>
-    
-    <div class="mission">
-        My goal is to add value to billions of people (now and in the future) by helping them live fulfilling lives & unlocking their untapped potential
+
+    <div class="section">
+        <h2>Bio</h2>
+        <p><strong>Mission:</strong> Be a light for those around me and help everyone, everywhere live with clarity, meaning, and deep fulfillment.</p>
+        <p><strong>Values:</strong> curiosity, growth, authenticity, bias for action, purity.</p>
+        <p><strong>Interests:</strong> The mind &amp; self (learning, emotions, philosophy, psychology, neuroscience), startups, emerging technologies, AI.</p>
     </div>
 
     <div class="section">
-        <h2>Current Work</h2>
-        <p>Founder of <a href="https://berryplush.com" target="_blank" style="color: blue;">Berry</a>, AI-powered plushies for your daily problems.</p>
-    </div>
-
-    <div class="section">
-        <h2>Values</h2>
-        <p>My most prominent value is curiosity. I love consuming, building, and learning. I believe knowledge is a crystal and I am in pursuit of truth. Other values that are equally as important: growth, bias for action, kindness, and authenticity</p>
+        <h2>Work</h2>
+        <p>Chief Cuddle Officer of <a href="https://berryplush.com" target="_blank">Berry</a>, AI‑powered plushies for your daily problems.</p>
     </div>
 
     <div class="section">
         <h2>Writings</h2>
-        <p><a href="https://alxmat.substack.com" target="_blank" style="color: blue;">Coming soon</a></p>
-
+        <p><a href="https://alxmat.substack.com" target="_blank">Coming soon</a></p>
     </div>
 
     <div class="section">
-        <p><a href="mailto:alex@alxmat.com">alex@alxmat.com</a></p>
+        <h2>Media</h2>
+        <p><strong>Podcast:</strong> <a href="https://www.youtube.com/watch?v=FrB3U9Tczwg" target="_blank">Future of Education</a>, <a href="https://www.youtube.com/watch?v=fryAYhPa37Y&t=374s" target="_blank">Merge Club</a></p>
+        <p><strong>Interviews:</strong> <a href="https://www.youtube.com/watch?v=0xKt_CWLTnA&t=246s" target="_blank">Web Summit Lisbon</a></p>
+        <p><strong>Publications:</strong> <a href="https://www.bizjournals.com/austin/news/2025/06/09/ai-classroom-preparing-new-era-learning.html" target="_blank">Austin Business Journal</a>, <a href="https://austinscholar.substack.com/p/austin-scholar-164-how-finding-purpose" target="_blank">Austin Scholar</a>, <a href="https://values.snap.com/safety/cdwb" target="_blank">Snap CDWB</a></p>
     </div>
 
+    <div class="section">
+        <h2>Socials</h2>
+        <p>
+            <a href="https://www.tiktok.com/@alxmthew" target="_blank">TikTok</a>
+            <span style="margin: 0 6px;">•</span>
+            <a href="https://www.instagram.com/alxmthew/" target="_blank">Instagram</a>
+            <span style="margin: 0 6px;">•</span>
+            <a href="https://x.com/alxmthew" target="_blank">X</a>
+        </p>
+    </div>
 </body>
 </html>
