@@ -1,71 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Mathew</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #2e2e2e;
-            --text: #e5e5e5;
-            --accent: #4aa0ff;
-        }
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 0 20px;
-            line-height: 1.6;
+            background-color: #fff;
+            color: black;
+            font-family: 'Inter', ui-sans-serif, system-ui, apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
         }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        img { margin: 20px 0; border-radius: 4px; max-width: 100%; height: auto; }
-        h1, h2 { font-weight: 600; margin-top: 2em; margin-bottom: 0.5em; color: var(--text); }
-        h1 { margin-top: 0.5em; font-size: 2.2rem; }
-        p { margin-bottom: 1.3em; }
-        .section { margin: 2.4em 0; }
-        .social-link { margin-right: 12px; }
-        ul { margin-left: 1em; padding-left: 0.4em; list-style: disc; }
+
+        .container {
+            text-align: left;
+            max-width: 600px;
+            margin-top: 60px;
+            padding: 0 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 40px;
+        }
+
+        p {
+            text-align: left;     
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.subtle-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease, border-bottom-color 0.2s ease;
+        }
+
+        a.subtle-link:hover {
+            border-bottom-color: #999;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #999;
+            margin: 30px 0;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 16px 0 rgba(30,34,90,0.06);
+        }
+
+        @media (max-width: 600px) {
+            body {
+                font-size: 17px;
+                padding: 50px 15px 30px 15px;
+            }
+            h1 {
+                font-size: 30px;
+            }
+            .section-title {
+                font-size: 19px;
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="https://github.com/alxthe/alxmat/raw/main/TMZ%205075%20Nov%2012%202024.jpg" alt="Alex Mathew holding tablet">
+    <div class="container">
+        <h1><a href="https://x.com/alxmthew" target="_blank">Alex Mathew</a></h1>
 
-    <h1>Alex Mathew</h1>
+        <p>Currently I am building <a class="subtle-link" href="https://berryplush.com" target="_blank">Berry, AI-powered plushies for your daily problems</a>.</p>
 
-    <div class="section">
-        <h2>Bio</h2>
-        <p><strong>Mission:</strong> Be a light for those around me and help everyone, everywhere live with clarity, meaning, and deep fulfillment.</p>
-        <p><strong>Values:</strong> curiosity, growth, authenticity, bias for action, purity.</p>
-        <p><strong>Interests:</strong> The mind &amp; self (learning, emotions, philosophy, psychology, neuroscience), startups, emerging technologies, AI.</p>
-    </div>
+        <p>Previously, I worked on neurotech and AI for suicide prevention, music, education, and medical diagnostics. I've also put in hundreds of volunteer hours, from mentoring teens and running service projects to shaping digital safety and edtech programs.</p>
 
-    <div class="section">
-        <h2>Work</h2>
-        <p>Chief Cuddle Officer of <a href="https://berryplush.com" target="_blank">Berry</a>, AI-powered plushies for your daily problems.</p>
-        <p>Prev: Neurotech &amp; AI for suicide-prevention, music, and diagnostics; CRISPR Alzheimer’s cure; 300+ hrs community service.</p>
-    </div>
+        <p>You can find me on <a class="subtle-link" href="https://x.com/alxmthew" target="_blank">X</a>, <a class="subtle-link" href="https://www.instagram.com/alxmthew/" target="_blank">Instagram</a>, and <a class="subtle-link" href="https://www.tiktok.com/@alxmthew" target="_blank">TikTok</a>.</p>
 
-    <div class="section">
-        <h2>Writings</h2>
-        <p><a href="https://alxmat.substack.com" target="_blank">Coming soon</a></p>
-    </div>
+        <hr>
 
-    <div class="section">
-        <h2>Media</h2>
-        <p><strong>Podcast:</strong> <a href="https://www.youtube.com/watch?v=FrB3U9Tczwg" target="_blank">Future of Education</a>, <a href="https://www.youtube.com/watch?v=fryAYhPa37Y&t=374s" target="_blank">Merge Club</a></p>
-        <p><strong>Interviews:</strong> <a href="https://www.youtube.com/watch?v=0xKt_CWLTnA&t=246s" target="_blank">Web Summit Lisbon</a></p>
-        <p><strong>Publications:</strong> <a href="https://www.bizjournals.com/austin/news/2025/06/09/ai-classroom-preparing-new-era-learning.html" target="_blank">Austin Business Journal</a>, <a href="https://austinscholar.substack.com/p/austin-scholar-164-how-finding-purpose" target="_blank">Austin Scholar</a>, <a href="https://values.snap.com/safety/cdwb" target="_blank">Snap CDWB</a></p>
-    </div>
+        <p><a class="subtle-link" href="principles.html">Principles</a> | <a class="subtle-link" href="media.html">Media</a> | <a class="subtle-link" href="writing.html">Writing</a></p>
 
-    <div class="section">
-        <h2>Socials</h2>
-        <p>
-            <a class="social-link" href="https://www.tiktok.com/@alxmthew" target="_blank">TikTok</a>
-            <a class="social-link" href="https://www.instagram.com/alxmthew/" target="_blank">Instagram</a>
-            <a class="social-link" href="https://x.com/alxmthew" target="_blank">X</a>
-        </p>
     </div>
 </body>
 </html>
