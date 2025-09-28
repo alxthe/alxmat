@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>writing | alex mathew</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #faf8f5;
+            color: #3d3935;
+            line-height: 1.65;
+            overflow-x: hidden;
+            font-size: 17px;
+            letter-spacing: -0.011em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* Header */
+        header {
+            padding: 4rem 0 2rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .back-link {
+            color: #829b88;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #2c2825;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .page-description {
+            color: #5c5551;
+            font-size: 1.05rem;
+            line-height: 1.75;
+            max-width: 700px;
+            font-weight: 400;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            margin: 3rem 0 2rem;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .filter-row {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-label {
+            font-size: 0.9rem;
+            color: #8b7f73;
+            min-width: 80px;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .filter-item {
+            font-size: 0.95rem;
+            color: #6b635c;
+            cursor: pointer;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: transparent;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .filter-item:hover {
+            background: rgba(130, 155, 136, 0.1);
+            border-color: rgba(130, 155, 136, 0.3);
+        }
+
+        .filter-item.active {
+            background: rgba(130, 155, 136, 0.15);
+            color: #829b88;
+            border-color: #829b88;
+        }
+
+        /* Search Box */
+        .search-box {
+            margin: 2rem 0;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.6);
+            color: #3d3935;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #829b88;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .search-input::placeholder {
+            color: #a89e94;
+        }
+
+        /* Results count */
+        .results-info {
+            margin: 2rem 0 1rem;
+            color: #8b7f73;
+            font-size: 0.95rem;
+        }
+
+        /* Writing List */
+        .writing-list {
+            margin: 2rem 0 4rem;
+        }
+
+        .writing-entry {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .writing-entry:hover {
+            background: rgba(255, 255, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        }
+
+
+        .entry-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .entry-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            font-size: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        .entry-date {
+            color: #a89e94;
+        }
+
+        .entry-category {
+            color: #829b88;
+            padding: 3px 10px;
+            background: rgba(130, 155, 136, 0.1);
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+
+        .entry-title {
+            font-size: 1.4rem;
+            color: #2c2825;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            line-height: 1.3;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .entry-description {
+            color: #5c5551;
+            font-size: 0.98rem;
+            line-height: 1.65;
+            margin-bottom: 1rem;
+        }
+
+        .entry-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+        }
+
+        .entry-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+        }
+
+        .tag {
+            font-size: 0.8rem;
+            color: #8b7f73;
+            padding: 4px 12px;
+            background: rgba(0, 0, 0, 0.02);
+            border-radius: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .tag:hover {
+            background: rgba(130, 155, 136, 0.1);
+            color: #829b88;
+        }
+
+
+        /* Empty state */
+        .empty-state {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: #888;
+        }
+
+        .empty-state h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #6b635c;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 2rem;
+                max-width: 100%;
+            }
+
+            header {
+                padding: 3rem 0 2rem;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .page-description {
+                font-size: 1rem;
+                line-height: 1.65;
+            }
+
+            .filter-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .filter-label {
+                min-width: auto;
+                font-size: 0.9rem;
+            }
+
+            .filter-options {
+                font-size: 0.9rem;
+            }
+
+            .search-input {
+                font-size: 0.95rem;
+            }
+
+            .writing-entry {
+                padding: 1.5rem;
+                margin: 2rem 0;
+            }
+
+            .entry-title {
+                font-size: 1.3rem;
+            }
+
+            .entry-description {
+                font-size: 0.98rem;
+                line-height: 1.65;
+            }
+
+            .entry-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .results-count {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1.5rem;
+                max-width: 100%;
+            }
+
+            header {
+                padding: 2rem 0 1.5rem;
+            }
+
+            .back-link {
+                font-size: 0.9rem;
+            }
+
+            .page-title {
+                font-size: 1.8rem;
+                margin: 1.5rem 0 1rem;
+            }
+
+            .page-description {
+                font-size: 0.95rem;
+                line-height: 1.6;
+                margin-bottom: 2rem;
+            }
+
+            .filter-section {
+                padding: 1.5rem 0;
+            }
+
+            .filter-row {
+                margin-bottom: 1rem;
+            }
+
+            .filter-label {
+                font-size: 0.85rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .filter-options {
+                font-size: 0.85rem;
+            }
+
+            .search-container {
+                margin: 1.5rem 0;
+            }
+
+            .search-input {
+                font-size: 0.9rem;
+                padding: 0.7rem 1rem;
+            }
+
+            .results-section {
+                padding: 1.5rem 0;
+            }
+
+            .results-count {
+                font-size: 0.8rem;
+                margin-bottom: 1rem;
+            }
+
+            .writing-entry {
+                padding: 1.2rem;
+                margin: 1.5rem 0;
+            }
+
+            .entry-header {
+                margin-bottom: 0.8rem;
+            }
+
+            .entry-meta {
+                font-size: 0.75rem;
+                gap: 1rem;
+            }
+
+            .entry-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+
+            .entry-description {
+                font-size: 0.9rem;
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+
+            .entry-tags {
+                display: none;
+            }
+
+            footer {
+                padding: 2rem 0 1.5rem;
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-nav">
+                <a href="index.html" class="back-link">← back to home</a>
+            </div>
+            <h1 class="page-title">writing</h1>
+            <p class="page-description">
+                exploring consciousness, technology, philosophy, and what it means to be human in an age of artificial intelligence. deep dives into the questions that matter most.
+            </p>
+        </header>
+
+        <div class="filter-section">
+            <div class="filter-row">
+                <span class="filter-label">category:</span>
+                <div class="filter-options">
+                    <span class="filter-item active" data-filter="category" data-value="all">all</span>
+                    <span class="filter-item" data-filter="category" data-value="philosophy">philosophy</span>
+                    <span class="filter-item" data-filter="category" data-value="technology">technology</span>
+                    <span class="filter-item" data-filter="category" data-value="reflections">reflections</span>
+                    <span class="filter-item" data-filter="category" data-value="essays">essays</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="search writings by title, topic, or keyword..." id="searchInput">
+        </div>
+
+        <div class="results-info">
+            showing <span id="resultsCount">10</span> writings
+        </div>
+
+        <div class="writing-list">
+            <!-- Featured Writing -->
+            <article class="writing-entry" data-category="philosophy" onclick="window.location.href='writings/foundations-of-flourishing.html'">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">september 2025</span>
+                        <span class="entry-category">philosophy</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">foundations of flourishing</h2>
+                <p class="entry-description">
+                    exploring self-security and inner wholeness as the bedrock of human potential. a deep investigation into what creates lasting wellbeing and how we can cultivate the conditions for genuine flourishing in ourselves and others.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">self-awareness</span>
+                        <span class="tag">growth</span>
+                        <span class="tag">psychology</span>
+                        <span class="tag">wellbeing</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="technology">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">august 2025</span>
+                        <span class="entry-category">technology</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">the real superintelligence</h2>
+                <p class="entry-description">
+                    consciousness, free will, and quantum computing's role in the next evolution of ai. examining what true intelligence means and whether machines can ever possess the qualities we consider fundamentally human.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">ai</span>
+                        <span class="tag">consciousness</span>
+                        <span class="tag">quantum</span>
+                        <span class="tag">future</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="philosophy">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">july 2025</span>
+                        <span class="entry-category">philosophy</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">purpose but no meaning</h2>
+                <p class="entry-description">
+                    a deep exploration of existential philosophy and finding direction in an absurd universe. how do we create purpose when traditional sources of meaning have dissolved?
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">existentialism</span>
+                        <span class="tag">purpose</span>
+                        <span class="tag">absurdism</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="philosophy">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">june 2025</span>
+                        <span class="entry-category">philosophy</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">the universe is the answer</h2>
+                <p class="entry-description">
+                    how to discover truth through observation, meditation, and radical openness. exploring practices and perspectives that help us align with reality as it actually is.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">truth</span>
+                        <span class="tag">meditation</span>
+                        <span class="tag">epistemology</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="reflections">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">may 2025</span>
+                        <span class="entry-category">reflections</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">building products that feel alive</h2>
+                <p class="entry-description">
+                    lessons from creating technology that resonates with human intuition. how to design experiences that don't feel like software but like natural extensions of human capability.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">product</span>
+                        <span class="tag">design</span>
+                        <span class="tag">empathy</span>
+                        <span class="tag">ux</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="technology">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">april 2025</span>
+                        <span class="entry-category">technology</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">the empathy machine</h2>
+                <p class="entry-description">
+                    can artificial intelligence truly understand human emotion? exploring the gap between simulated and genuine empathy, and what it means for the future of human-ai interaction.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">ai</span>
+                        <span class="tag">emotion</span>
+                        <span class="tag">ethics</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="essays">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">march 2025</span>
+                        <span class="entry-category">essays</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">notes on attention</h2>
+                <p class="entry-description">
+                    what we pay attention to shapes who we become. thoughts on focus, distraction, and the cultivation of deep presence in a hyperconnected world.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">attention</span>
+                        <span class="tag">mindfulness</span>
+                        <span class="tag">focus</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="philosophy">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">february 2025</span>
+                        <span class="entry-category">philosophy</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">the paradox of choice</h2>
+                <p class="entry-description">
+                    how infinite optionality can lead to paralysis and why constraints might be the key to freedom. examining the relationship between choice, satisfaction, and human flourishing.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">choice</span>
+                        <span class="tag">freedom</span>
+                        <span class="tag">psychology</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="philosophy">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">january 2025</span>
+                        <span class="entry-category">philosophy</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">the observer and the observed</h2>
+                <p class="entry-description">
+                    investigating the relationship between consciousness and reality. what happens when we turn awareness back on itself? exploring non-dual perspectives and their implications.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">awareness</span>
+                        <span class="tag">non-duality</span>
+                        <span class="tag">meditation</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="writing-entry" data-category="technology">
+                <div class="entry-header">
+                    <div class="entry-meta">
+                        <span class="entry-date">december 2024</span>
+                        <span class="entry-category">technology</span>
+                    </div>
+                </div>
+                <h2 class="entry-title">interfaces for thought</h2>
+                <p class="entry-description">
+                    how the tools we use shape the thoughts we think. exploring the future of human-computer interaction and what it means to augment human intelligence.
+                </p>
+                <div class="entry-footer">
+                    <div class="entry-tags">
+                        <span class="tag">tools</span>
+                        <span class="tag">thinking</span>
+                        <span class="tag">augmentation</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <div class="empty-state" style="display: none;">
+            <h3>no writings found</h3>
+            <p>try adjusting your filters or search terms</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple filtering functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterItems = document.querySelectorAll('.filter-item');
+            const searchInput = document.getElementById('searchInput');
+            const writingEntries = document.querySelectorAll('.writing-entry');
+            const resultsCount = document.getElementById('resultsCount');
+            const emptyState = document.querySelector('.empty-state');
+            const writingList = document.querySelector('.writing-list');
+
+            let activeFilters = {
+                category: 'all'
+            };
+
+            // Filter functionality
+            filterItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const filterType = this.getAttribute('data-filter');
+                    const filterValue = this.getAttribute('data-value');
+
+                    // Update active state
+                    document.querySelectorAll(`[data-filter="${filterType}"]`).forEach(el => {
+                        el.classList.remove('active');
+                    });
+                    this.classList.add('active');
+
+                    // Update active filters
+                    activeFilters[filterType] = filterValue;
+
+                    // Apply filters
+                    applyFilters();
+                });
+            });
+
+            // Search functionality
+            searchInput.addEventListener('input', function() {
+                applyFilters();
+            });
+
+            function applyFilters() {
+                const searchTerm = searchInput.value.toLowerCase();
+                let visibleCount = 0;
+
+                writingEntries.forEach(entry => {
+                    const category = entry.getAttribute('data-category');
+                    const title = entry.querySelector('.entry-title').textContent.toLowerCase();
+                    const description = entry.querySelector('.entry-description').textContent.toLowerCase();
+                    const tags = Array.from(entry.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase()).join(' ');
+
+                    let categoryMatch = activeFilters.category === 'all' || category === activeFilters.category;
+                    let searchMatch = !searchTerm || 
+                                      title.includes(searchTerm) || 
+                                      description.includes(searchTerm) || 
+                                      tags.includes(searchTerm);
+
+                    if (categoryMatch && searchMatch) {
+                        entry.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        entry.style.display = 'none';
+                    }
+                });
+
+                // Update results count
+                resultsCount.textContent = visibleCount;
+
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    writingList.style.display = 'none';
+                    emptyState.style.display = 'block';
+                } else {
+                    writingList.style.display = 'block';
+                    emptyState.style.display = 'none';
+                }
+            }
+
+            // Initial count
+            applyFilters();
+        });
+    </script>
+</body>
+</html>

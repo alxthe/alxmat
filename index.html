@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alex's space</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #faf8f5;
+            color: #3d3935;
+            line-height: 1.65;
+            overflow-x: hidden;
+            font-size: 17px;
+            letter-spacing: -0.011em;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+
+
+        /* Header - removed */
+
+        .name {
+            font-size: 1.5rem;
+            color: #2c2825;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .signature-doodle {
+            position: absolute;
+            right: -60px;
+            top: -5px;
+            width: 40px;
+            height: 25px;
+            opacity: 0.6;
+        }
+
+        /* Navigation as casual links */
+        .nav-section {
+            margin-bottom: 2rem;
+        }
+
+        .nav-links {
+            display: inline;
+            color: #6b635c;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a {
+            color: #829b88;
+            text-decoration: none;
+            border-bottom: 1px dotted #829b88;
+            transition: all 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #6a8170;
+            border-bottom-style: solid;
+        }
+
+        .arrow {
+            color: #a89e94;
+            margin: 0 0.3rem;
+        }
+
+        /* Main content sections */
+        .section {
+            margin: 6rem 0;
+            position: relative;
+            z-index: 5;
+        }
+
+        .section:first-of-type {
+            margin-top: 8rem;
+        }
+
+        .section-number {
+            font-size: 0.9rem;
+            color: #b5a99f;
+            margin-bottom: 1rem;
+            font-weight: 400;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #2c2825;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .section-content {
+            max-width: 700px;
+            color: #5c5551;
+            line-height: 1.75;
+            margin-bottom: 3rem;
+            font-size: 1.05rem;
+            margin-top: 1rem;
+            font-weight: 400;
+        }
+
+        .meta-links {
+            font-size: 1rem;
+            color: #8b7f73;
+        }
+
+        .meta-links a {
+            color: #829b88;
+            text-decoration: none;
+            border-bottom: 1px dotted #829b88;
+        }
+
+        .meta-links a:hover {
+            border-bottom-style: solid;
+        }
+
+
+
+        /* Contact section */
+        .contact-section {
+            margin: 6rem 0;
+            text-align: left;
+        }
+
+        .contact-content {
+            max-width: 600px;
+        }
+
+        .contact-title {
+            font-size: 1.5rem;
+            color: #2c2825;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-text {
+            color: #5c5551;
+            margin-bottom: 3rem;
+            line-height: 1.75;
+            font-size: 1.05rem;
+            font-weight: 400;
+        }
+
+        .contact-link {
+            color: #829b88;
+            text-decoration: none;
+            border-bottom: 2px solid #829b88;
+            padding-bottom: 3px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            font-size: 1.1rem;
+        }
+
+        .contact-link:hover {
+            background: #829b88;
+            color: white;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            border-bottom: none;
+        }
+
+        .subtle-link {
+            color: #829b88;
+            text-decoration: none;
+            border-bottom: 1px dotted #829b88;
+            transition: all 0.2s ease;
+        }
+
+        .subtle-link:hover {
+            border-bottom-style: solid;
+            color: #6a8170;
+        }
+
+        /* Footer */
+        footer {
+            margin: 3rem 0 2rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #b5a99f;
+            font-weight: 400;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 2rem;
+                max-width: 100%;
+            }
+            
+            .name {
+                font-size: 1.3rem;
+            }
+            
+            .nav-links {
+                font-size: 1rem;
+            }
+            
+            .section {
+                margin: 4rem 0;
+            }
+            
+            .section:first-of-type {
+                margin-top: 4rem;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .section-number {
+                font-size: 0.8rem;
+            }
+            
+            .section-content {
+                font-size: 0.98rem;
+                max-width: 100%;
+            }
+            
+            .contact-title {
+                font-size: 1.3rem;
+            }
+            
+            .contact-text {
+                font-size: 0.98rem;
+            }
+            
+            .signature-doodle {
+                right: -45px;
+                width: 30px;
+                height: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .container {
+                padding: 0 1.5rem;
+                max-width: 100%;
+            }
+            
+            .name {
+                font-size: 1.2rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .nav-links {
+                font-size: 0.95rem;
+            }
+            
+            .section {
+                margin: 3rem 0;
+            }
+            
+            .section:first-of-type {
+                margin-top: 3rem;
+            }
+            
+            .section-number {
+                font-size: 0.75rem;
+                margin-bottom: 0.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.25rem;
+                margin-bottom: 0.7rem;
+            }
+            
+            .section-content {
+                font-size: 0.95rem;
+                line-height: 1.65;
+            }
+            
+            .section-content p {
+                margin-bottom: 0.9rem;
+            }
+            
+            .section-content em {
+                display: inline-block;
+                margin-bottom: 0.3rem;
+            }
+            
+            .subtle-link {
+                font-size: 0.95rem;
+            }
+            
+            .contact-section {
+                margin: 3rem 0 2rem;
+            }
+            
+            .contact-title {
+                font-size: 1.2rem;
+                margin-bottom: 0.8rem;
+            }
+            
+            .contact-text {
+                font-size: 0.95rem;
+                margin-bottom: 2rem;
+                line-height: 1.65;
+            }
+            
+            .contact-link {
+                font-size: 1rem;
+            }
+            
+            .explore-link {
+                font-size: 0.95rem;
+                display: inline-block;
+                margin-top: 1rem;
+            }
+            
+            footer {
+                padding: 2rem 0 1.5rem;
+                font-size: 0.85rem;
+            }
+            
+            .signature-doodle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container">
+        <section class="section" id="about">
+            <div class="section-number">01</div>
+            <div class="section-title">alex mathew</div>
+            <div class="section-content">
+                hi, i'm alex the founder of <a href="https://berryplush.com" target="_blank" class="subtle-link">berry ai plushies for teens</a><br><br>
+                my goal is to help billions live their best lives and accelerate human progress. i'm creating technology that's a natural extension of humanity to unlock our deepest joy, truest freedom, and fundamental truths.
+            </div>
+        </section>
+
+        <section class="section" id="thoughts">
+            <div class="section-number">02</div>
+            <div class="section-title">writing</div>
+            <div class="section-content">
+                exploring consciousness, technology, philosophy, and what it means to be human in an age of artificial intelligence. deep dives into the questions that matter most.
+                <div class="meta-links" style="margin-top: 1rem;">
+                    <a href="writing.html">explore all writing</a> →
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="media">
+            <div class="section-number">03</div>
+            <div class="section-title">featured in media</div>
+            
+            <div class="section-content">
+                <p><em>interviews:</em> <a class="subtle-link" href="https://www.youtube.com/watch?v=FrB3U9Tczwg" target="_blank">future of education</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=fryAYhPa37Y&t=374s" target="_blank">merge club</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=KGGvA4zeJRg" target="_blank">out of office</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=coW9-pgXX6w&t=1696s" target="_blank">reid hoffman</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=0xKt_CWLTnA&t=246s" target="_blank">web summit</a></p>
+                
+                <p><em>publications:</em> <a class="subtle-link" href="https://www.bizjournals.com/austin/news/2025/06/09/ai-classroom-preparing-new-era-learning.html" target="_blank">austin business journal</a>, <a class="subtle-link" href="https://austinscholar.substack.com/p/austin-scholar-164-how-finding-purpose" target="_blank">austin scholar</a>, <a class="subtle-link" href="https://values.snap.com/safety/cdwb" target="_blank">snap cdwb</a>, <a class="subtle-link" href="https://www.nytimes.com/2025/07/27/us/politics/ai-alpha-school-austin-texas.html?unlocked_article_code=1.Zk8.ERGk.c7e7bhGjVkPS&smid=url-share" target="_blank">the new york times</a></p>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="section-number">04</div>
+            <div class="contact-content">
+                <div class="contact-title">reach out!</div>
+                <div class="contact-text">
+                    always excited to collaborate with people who care about creating meaningful, human experiences. you can find me on <a class="subtle-link" href="https://x.com/alxmthew" target="_blank">x</a>, <a class="subtle-link" href="https://www.instagram.com/alxmthew/" target="_blank">instagram</a>, <a class="subtle-link" href="https://www.tiktok.com/@alxmthew" target="_blank">tiktok</a>, and <a class="subtle-link" href="https://linkedin.com/in/alxmat" target="_blank">linkedin</a>.
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</body>
+</html>
