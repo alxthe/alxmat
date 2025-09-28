@@ -253,16 +253,21 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            /* Mobile tooltip styles */
+            /* Mobile tooltip styles - position below icons */
             .tooltip-text {
                 opacity: 0;
                 visibility: hidden;
+                top: 100%;
+                margin-top: 8px;
+                left: 50%;
+                transform: translateX(-50%);
+                max-width: 85vw;
+                white-space: nowrap;
             }
             
             .icon-wrapper.active .tooltip-text {
                 opacity: 1;
                 visibility: visible;
-                top: -40px;
             }
 
             .container {
