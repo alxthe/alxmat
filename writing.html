@@ -70,6 +70,79 @@
             font-weight: 400;
         }
 
+        .page-description a {
+            color: #829b88;
+            text-decoration: none;
+            border-bottom: 1px dotted #829b88;
+            transition: all 0.2s ease;
+        }
+
+        .page-description a:hover {
+            border-bottom-style: solid;
+            color: #6a8170;
+        }
+
+        /* Page title icon */
+        .page-title-icon {
+            height: 1.4em;
+            vertical-align: middle;
+            margin-left: 0.15em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .page-title:hover .page-title-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        /* Entry title icon */
+        .entry-title-icon {
+            height: 1.1em;
+            vertical-align: middle;
+            margin-left: 0.15em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .entry-title:hover .entry-title-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        /* Icon wrapper and tooltip */
+        .icon-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip-text {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(250, 248, 245, 0.98);
+            color: #5c5551;
+            padding: 6px 12px;
+            border: 1px solid rgba(130, 155, 136, 0.3);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .icon-wrapper:hover .tooltip-text {
+            opacity: 1;
+            visibility: visible;
+            top: -40px;
+        }
+
         /* Filter Section */
         .filter-section {
             margin: 3rem 0 2rem;
@@ -264,6 +337,18 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            /* Mobile tooltip styles */
+            .tooltip-text {
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .icon-wrapper.active .tooltip-text {
+                opacity: 1;
+                visibility: visible;
+                top: -40px;
+            }
+            
             .container {
                 padding: 0 2rem;
                 max-width: 100%;
@@ -275,6 +360,10 @@
 
             .page-title {
                 font-size: 2rem;
+            }
+
+            .page-title-icon {
+                height: 1.3em;
             }
 
             .page-description {
@@ -310,6 +399,10 @@
                 font-size: 1.3rem;
             }
 
+            .entry-title-icon {
+                height: 1.05em;
+            }
+
             .entry-description {
                 font-size: 0.98rem;
                 line-height: 1.65;
@@ -343,6 +436,10 @@
             .page-title {
                 font-size: 1.8rem;
                 margin: 1.5rem 0 1rem;
+            }
+
+            .page-title-icon {
+                height: 1.2em;
             }
 
             .page-description {
@@ -405,6 +502,10 @@
                 margin-bottom: 0.8rem;
             }
 
+            .entry-title-icon {
+                height: 1em;
+            }
+
             .entry-description {
                 font-size: 0.9rem;
                 line-height: 1.6;
@@ -428,9 +529,9 @@
             <div class="header-nav">
                 <a href="index.html" class="back-link">← back to home</a>
             </div>
-            <h1 class="page-title">writing</h1>
+            <h1 class="page-title">writing <span class="icon-wrapper"><img src="icons/12.png" alt="pastel de nata" title="pastel de nata, portuguese egg custard" class="page-title-icon"><span class="tooltip-text">pastel de nata, portuguese egg custard</span></span></h1>
             <p class="page-description">
-                exploring consciousness, technology, philosophy, and what it means to be human in an age of artificial intelligence. deep dives into the questions that matter most.
+                here is the list of all my writings. if you want to stay updated on new writings, you can subscribe to my newsletter on <a href="https://writing.alxmthew.com" target="_blank">substack</a>.
             </p>
         </header>
 
@@ -464,7 +565,7 @@
                         <span class="entry-category">philosophy</span>
                     </div>
                 </div>
-                <h2 class="entry-title">foundations of flourishing</h2>
+                <h2 class="entry-title">foundations of flourishing <img src="icons/7.png" alt="" class="entry-title-icon"></h2>
                 <p class="entry-description">
                     exploring self-security and inner wholeness as the bedrock of human potential. a deep investigation into what creates lasting wellbeing and how we can cultivate the conditions for genuine flourishing in ourselves and others.
                 </p>
@@ -745,6 +846,48 @@
 
             // Initial count
             applyFilters();
+        });
+
+        // Mobile tooltip functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const iconWrappers = document.querySelectorAll('.icon-wrapper');
+            
+            iconWrappers.forEach(wrapper => {
+                wrapper.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Check if we're on mobile
+                    if (window.innerWidth <= 768) {
+                        // Close all other tooltips
+                        iconWrappers.forEach(w => {
+                            if (w !== wrapper) {
+                                w.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle this tooltip
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Close tooltips when clicking elsewhere
+            document.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    iconWrappers.forEach(wrapper => {
+                        wrapper.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Close tooltips on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    iconWrappers.forEach(wrapper => {
+                        wrapper.classList.remove('active');
+                    });
+                }
+            });
         });
     </script>
 </body>

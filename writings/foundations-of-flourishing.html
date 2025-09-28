@@ -119,6 +119,19 @@
             letter-spacing: 0.01em;
         }
 
+        /* Article title icon */
+        .article-title-icon {
+            height: 1.3em;
+            vertical-align: middle;
+            margin-left: 0.2em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        h1:hover .article-title-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
         /* Main content */
         .article-content {
             max-width: 680px;
@@ -314,6 +327,10 @@
                 line-height: 1.25;
             }
 
+            .article-title-icon {
+                height: 1.25em;
+            }
+
             .article-content h2 {
                 font-size: 1.5rem;
                 margin: 2.5rem 0 1.2rem;
@@ -376,6 +393,10 @@
                 font-size: 1.75rem;
                 line-height: 1.2;
                 margin-bottom: 1rem;
+            }
+
+            .article-title-icon {
+                height: 1.2em;
             }
 
             .article-content h2 {
@@ -516,7 +537,7 @@
                 </div>
             </div>
             
-            <h1>foundations of flourishing</h1>
+            <h1>foundations of flourishing <img src="../icons/7.png" alt="" class="article-title-icon"></h1>
             <p class="article-description">
                 exploring self-security and inner wholeness as the bedrock of human potential
             </p>

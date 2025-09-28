@@ -200,8 +200,71 @@
             font-weight: 400;
         }
 
+        /* Icon styles */
+        .title-icon {
+            height: 1.2em;
+            vertical-align: middle;
+            margin-left: 0.15em;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .section-title:hover .title-icon,
+        .contact-title:hover .title-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        /* Icon wrapper and tooltip */
+        .icon-wrapper {
+            position: relative;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .tooltip-text {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(250, 248, 245, 0.98);
+            color: #5c5551;
+            padding: 6px 12px;
+            border: 1px solid rgba(130, 155, 136, 0.3);
+            border-radius: 6px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        .icon-wrapper:hover .tooltip-text {
+            opacity: 1;
+            visibility: visible;
+            top: -40px;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            /* Mobile tooltip styles */
+            .tooltip-text {
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .icon-wrapper.active .tooltip-text {
+                opacity: 1;
+                visibility: visible;
+                top: -40px;
+            }
+
             .container {
                 padding: 0 2rem;
                 max-width: 100%;
@@ -348,7 +411,7 @@
     <div class="container">
         <section class="section" id="about">
             <div class="section-number">01</div>
-            <div class="section-title">alex mathew</div>
+            <div class="section-title">alex mathew <span class="icon-wrapper"><img src="icons/1.png" alt="fluffy" title="fluffy, my favorite stuffed dog" class="title-icon"><span class="tooltip-text">fluffy, my favorite stuffed dog</span></span></div>
             <div class="section-content">
                 hi, i'm alex the founder of <a href="https://berryplush.com" target="_blank" class="subtle-link">berry ai plushies for teens</a><br><br>
                 my goal is to help billions live their best lives and accelerate human progress. i'm creating technology that's a natural extension of humanity to unlock our deepest joy, truest freedom, and fundamental truths.
@@ -357,9 +420,9 @@
 
         <section class="section" id="thoughts">
             <div class="section-number">02</div>
-            <div class="section-title">writing</div>
+            <div class="section-title">writing <span class="icon-wrapper"><img src="icons/12.png" alt="pastel de nata" title="pastel de nata, portuguese egg custard" class="title-icon"><span class="tooltip-text">pastel de nata, portuguese egg custard</span></span></div>
             <div class="section-content">
-                exploring consciousness, technology, philosophy, and what it means to be human in an age of artificial intelligence. deep dives into the questions that matter most.
+                exploring psychology, technology, philosophy, and what it means to be human in an age of artificial intelligence. deep dives into the questions that matter most.
                 <div class="meta-links" style="margin-top: 1rem;">
                     <a href="writing.html">explore all writing</a> →
                 </div>
@@ -368,7 +431,7 @@
 
         <section class="section" id="media">
             <div class="section-number">03</div>
-            <div class="section-title">featured in media</div>
+            <div class="section-title">featured in media <span class="icon-wrapper"><img src="icons/18.png" alt="bloopers" title="i love bloopers of my favorite tv shows" class="title-icon"><span class="tooltip-text">i love bloopers of my favorite tv shows</span></span></div>
             
             <div class="section-content">
                 <p><em>interviews:</em> <a class="subtle-link" href="https://www.youtube.com/watch?v=FrB3U9Tczwg" target="_blank">future of education</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=fryAYhPa37Y&t=374s" target="_blank">merge club</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=KGGvA4zeJRg" target="_blank">out of office</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=coW9-pgXX6w&t=1696s" target="_blank">reid hoffman</a>, <a class="subtle-link" href="https://www.youtube.com/watch?v=0xKt_CWLTnA&t=246s" target="_blank">web summit</a></p>
@@ -380,7 +443,7 @@
         <section class="contact-section" id="contact">
             <div class="section-number">04</div>
             <div class="contact-content">
-                <div class="contact-title">reach out!</div>
+                <div class="contact-title">reach out! <img src="icons/8.png" alt="" class="title-icon"></div>
                 <div class="contact-text">
                     always excited to collaborate with people who care about creating meaningful, human experiences. you can find me on <a class="subtle-link" href="https://x.com/alxmthew" target="_blank">x</a>, <a class="subtle-link" href="https://www.instagram.com/alxmthew/" target="_blank">instagram</a>, <a class="subtle-link" href="https://www.tiktok.com/@alxmthew" target="_blank">tiktok</a>, and <a class="subtle-link" href="https://linkedin.com/in/alxmat" target="_blank">linkedin</a>.
                 </div>
@@ -389,5 +452,49 @@
 
 
     </div>
+
+    <script>
+        // Mobile tooltip functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const iconWrappers = document.querySelectorAll('.icon-wrapper');
+            
+            iconWrappers.forEach(wrapper => {
+                wrapper.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Check if we're on mobile
+                    if (window.innerWidth <= 768) {
+                        // Close all other tooltips
+                        iconWrappers.forEach(w => {
+                            if (w !== wrapper) {
+                                w.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle this tooltip
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Close tooltips when clicking elsewhere
+            document.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    iconWrappers.forEach(wrapper => {
+                        wrapper.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Close tooltips on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    iconWrappers.forEach(wrapper => {
+                        wrapper.classList.remove('active');
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
