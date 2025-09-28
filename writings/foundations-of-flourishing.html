@@ -588,7 +588,7 @@
                 </div>
             </div>
             
-            <h1>foundations of flourishing <span class="icon-wrapper"><img src="../icons/7.png" alt="elderflower" title="elderflower, a symbol of life" class="article-title-icon"><span class="tooltip-text">elderflower, a symbol of life</span></span></h1>
+            <h1>foundations of flourishing <span class="icon-wrapper"><img src="../icons/7.png" alt="elderflower" class="article-title-icon"><span class="tooltip-text">elderflower, a symbol of life</span></span></h1>
             <p class="article-description">
                 exploring self-security and inner wholeness as the bedrock of human potential
             </p>
@@ -718,6 +718,48 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        });
+        
+        // Mobile tooltip functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const iconWrappers = document.querySelectorAll('.icon-wrapper');
+            
+            iconWrappers.forEach(wrapper => {
+                wrapper.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    // Check if we're on mobile
+                    if (window.innerWidth <= 768) {
+                        // Close all other tooltips
+                        iconWrappers.forEach(w => {
+                            if (w !== wrapper) {
+                                w.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle this tooltip
+                        this.classList.toggle('active');
+                    }
+                });
+            });
+            
+            // Close tooltips when clicking elsewhere
+            document.addEventListener('click', function() {
+                if (window.innerWidth <= 768) {
+                    iconWrappers.forEach(wrapper => {
+                        wrapper.classList.remove('active');
+                    });
+                }
+            });
+            
+            // Close tooltips on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    iconWrappers.forEach(wrapper => {
+                        wrapper.classList.remove('active');
+                    });
+                }
             });
         });
     </script>
