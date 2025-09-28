@@ -269,6 +269,12 @@
                 opacity: 1;
                 visibility: visible;
             }
+            
+            /* Adjust writing tooltip position on mobile to prevent cutoff */
+            #thoughts .icon-wrapper .tooltip-text {
+                left: 80%;
+                transform: translateX(-50%);
+            }
 
             .container {
                 padding: 0 2rem;
@@ -448,7 +454,7 @@
         <section class="contact-section" id="contact">
             <div class="section-number">04</div>
             <div class="contact-content">
-                <div class="contact-title">reach out! <img src="icons/8.png" alt="" class="title-icon"></div>
+                <div class="contact-title">reach out! <span class="icon-wrapper"><img src="icons/8.png" alt="succulents" title="succulents are cool" class="title-icon"><span class="tooltip-text">succulents are cool</span></span></div>
                 <div class="contact-text">
                     always excited to collaborate with people who care about creating meaningful, human experiences. you can find me on <a class="subtle-link" href="https://x.com/alxmthew" target="_blank">x</a>, <a class="subtle-link" href="https://www.instagram.com/alxmthew/" target="_blank">instagram</a>, <a class="subtle-link" href="https://www.tiktok.com/@alxmthew" target="_blank">tiktok</a>, and <a class="subtle-link" href="https://linkedin.com/in/alxmat" target="_blank">linkedin</a>.
                 </div>
