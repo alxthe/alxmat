@@ -851,9 +851,6 @@
         quoteToggle.addEventListener('click', () => {
             isQuoteVisible = !isQuoteVisible;
             quoteWidget.classList.toggle('visible');
-            if (isQuoteVisible) {
-                getRandomQuote();
-            }
         });
         
         quoteMinimize.addEventListener('click', () => {
