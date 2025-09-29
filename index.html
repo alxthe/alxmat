@@ -13,14 +13,38 @@
 
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
         
+        /* CSS Variables for theming */
+        :root {
+            --bg-color: #faf8f5;
+            --text-primary: #2c2825;
+            --text-secondary: #5c5551;
+            --text-tertiary: #8b7f73;
+            --accent-color: #829b88;
+            --border-color: rgba(0, 0, 0, 0.05);
+            --hover-bg: rgba(130, 155, 136, 0.1);
+            --section-bg: rgba(255, 255, 255, 0.3);
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #1a1815;
+            --text-primary: #e8e3dd;
+            --text-secondary: #b5a99f;
+            --text-tertiary: #8b7f73;
+            --accent-color: #a3c4a9;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --hover-bg: rgba(163, 196, 169, 0.15);
+            --section-bg: rgba(0, 0, 0, 0.2);
+        }
+        
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #faf8f5;
-            color: #3d3935;
+            background: var(--bg-color);
+            color: var(--text-primary);
             line-height: 1.65;
             overflow-x: hidden;
-            font-size: 17px;
+            font-size: 19px;
             letter-spacing: -0.011em;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .container {
@@ -34,7 +58,7 @@
         /* Header - removed */
 
         .name {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: #2c2825;
             margin-bottom: 1.5rem;
             font-weight: 600;
@@ -60,7 +84,7 @@
         .nav-links {
             display: inline;
             color: #6b635c;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
         }
 
         .nav-links a {
@@ -92,15 +116,15 @@
         }
 
         .section-number {
-            font-size: 0.9rem;
-            color: #b5a99f;
+            font-size: 1rem;
+            color: var(--text-tertiary);
             margin-bottom: 1rem;
             font-weight: 400;
         }
 
         .section-title {
-            font-size: 1.5rem;
-            color: #2c2825;
+            font-size: 1.7rem;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             font-weight: 600;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -109,23 +133,23 @@
 
         .section-content {
             max-width: 700px;
-            color: #5c5551;
+            color: var(--text-secondary);
             line-height: 1.75;
             margin-bottom: 3rem;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             margin-top: 1rem;
             font-weight: 400;
         }
 
         .meta-links {
-            font-size: 1rem;
-            color: #8b7f73;
+            font-size: 1.1rem;
+            color: var(--text-tertiary);
         }
 
         .meta-links a {
-            color: #829b88;
+            color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 1px dotted #829b88;
+            border-bottom: 1px dotted var(--accent-color);
         }
 
         .meta-links a:hover {
@@ -145,8 +169,8 @@
         }
 
         .contact-title {
-            font-size: 1.5rem;
-            color: #2c2825;
+            font-size: 1.7rem;
+            color: var(--text-primary);
             margin-bottom: 1rem;
             font-weight: 600;
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -154,35 +178,35 @@
         }
 
         .contact-text {
-            color: #5c5551;
+            color: var(--text-secondary);
             margin-bottom: 3rem;
             line-height: 1.75;
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             font-weight: 400;
         }
 
         .contact-link {
-            color: #829b88;
+            color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 2px solid #829b88;
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 3px;
             font-weight: 500;
             transition: all 0.2s ease;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
 
         .contact-link:hover {
-            background: #829b88;
-            color: white;
+            background: var(--accent-color);
+            color: var(--bg-color);
             padding: 0.3rem 0.6rem;
             border-radius: 4px;
             border-bottom: none;
         }
 
         .subtle-link {
-            color: #829b88;
+            color: var(--accent-color);
             text-decoration: none;
-            border-bottom: 1px dotted #829b88;
+            border-bottom: 1px dotted var(--accent-color);
             transition: all 0.2s ease;
         }
 
@@ -195,8 +219,8 @@
         footer {
             margin: 3rem 0 2rem;
             text-align: center;
-            font-size: 0.85rem;
-            color: #b5a99f;
+            font-size: 0.95rem;
+            color: var(--text-tertiary);
             font-weight: 400;
         }
 
@@ -236,12 +260,12 @@
             top: -35px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(250, 248, 245, 0.98);
-            color: #5c5551;
+            background: var(--bg-color);
+            color: var(--text-secondary);
             padding: 6px 12px;
-            border: 1px solid rgba(130, 155, 136, 0.3);
+            border: 1px solid var(--border-color);
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             white-space: nowrap;
             opacity: 0;
             visibility: hidden;
@@ -259,8 +283,211 @@
             top: -40px;
         }
 
+        /* Dark Mode Toggle Button */
+        .theme-toggle {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+        }
+
+        .theme-toggle:hover {
+            background: var(--hover-bg);
+            transform: rotate(15deg) scale(1.1);
+        }
+
+        .sun-icon, .moon-icon {
+            position: absolute;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .sun-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        .moon-icon {
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+
+        [data-theme="dark"] .sun-icon {
+            opacity: 0;
+            transform: rotate(90deg);
+        }
+
+        [data-theme="dark"] .moon-icon {
+            opacity: 1;
+            transform: rotate(0deg);
+        }
+
+        /* Quote Toggle Button */
+        .quote-toggle-btn {
+            position: fixed;
+            bottom: 2rem;
+            left: 2rem;
+            background: var(--section-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 99;
+            transition: all 0.3s ease;
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .quote-toggle-btn:hover {
+            transform: scale(1.1);
+            background: var(--hover-bg);
+        }
+
+        /* Floating Quote Widget */
+        .quote-widget {
+            position: fixed;
+            bottom: 5rem;
+            left: 2rem;
+            max-width: 320px;
+            background: var(--section-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            z-index: 100;
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+        }
+
+        .quote-widget.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .quote-widget:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .quote-widget-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 0.8rem;
+        }
+
+        .quote-label {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+
+        .quote-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .quote-refresh, .quote-minimize {
+            background: none;
+            border: none;
+            color: var(--accent-color);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .quote-widget.minimized {
+            padding: 0.8rem 1rem;
+        }
+
+        .quote-widget.minimized .quote-text,
+        .quote-widget.minimized .quote-author {
+            display: none;
+        }
+
+        .quote-widget.minimized .quote-widget-header {
+            margin-bottom: 0;
+        }
+
+        .quote-refresh:hover {
+            transform: rotate(180deg);
+        }
+
+        .quote-text {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            line-height: 1.6;
+            font-family: 'Georgia', serif;
+            margin-bottom: 0.6rem;
+        }
+
+        .quote-author {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
+            .theme-toggle {
+                top: 1rem;
+                right: 1rem;
+                width: 40px;
+                height: 40px;
+            }
+
+            .quote-toggle-btn {
+                bottom: 1rem;
+                left: 1rem;
+                width: 45px;
+                height: 45px;
+            }
+
+            .quote-widget {
+                bottom: 4rem;
+                left: 1rem;
+                right: 1rem;
+                max-width: none;
+                padding: 1rem 1.2rem;
+            }
+
+            .quote-widget.visible {
+                transform: translateY(0);
+            }
+
+            .quote-text {
+                font-size: 1rem;
+            }
+
+            .quote-label {
+                font-size: 0.8rem;
+            }
+
             /* Mobile tooltip styles - position below icons */
             .tooltip-text {
                 opacity: 0;
@@ -284,11 +511,11 @@
             }
             
             .name {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             
             .nav-links {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .section {
@@ -300,24 +527,24 @@
             }
             
             .section-title {
-                font-size: 1.4rem;
+                font-size: 1.5rem;
             }
             
             .section-number {
-                font-size: 0.8rem;
+                font-size: 0.9rem;
             }
             
             .section-content {
-                font-size: 0.98rem;
+                font-size: 1.05rem;
                 max-width: 100%;
             }
             
             .contact-title {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
             
             .contact-text {
-                font-size: 0.98rem;
+                font-size: 1.05rem;
             }
             
             .signature-doodle {
@@ -329,7 +556,7 @@
 
         @media (max-width: 480px) {
             body {
-                font-size: 16px;
+                font-size: 18px;
             }
             
             .container {
@@ -360,12 +587,12 @@
             }
             
             .section-title {
-                font-size: 1.25rem;
+                font-size: 1.4rem;
                 margin-bottom: 0.7rem;
             }
             
             .section-content {
-                font-size: 0.95rem;
+                font-size: 1rem;
                 line-height: 1.65;
             }
             
@@ -409,7 +636,7 @@
             
             footer {
                 padding: 2rem 0 1.5rem;
-                font-size: 0.85rem;
+                font-size: 0.9rem;
             }
             
             .signature-doodle {
@@ -419,7 +646,23 @@
     </style>
 </head>
 <body>
-
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
 
     <div class="container">
         <section class="section" id="about">
@@ -466,6 +709,26 @@
 
     </div>
 
+    <!-- Quote Toggle Button -->
+    <button class="quote-toggle-btn" id="quoteToggle" aria-label="Toggle wisdom quotes">
+        <span>💭</span>
+    </button>
+
+    <!-- Floating Quote Widget -->
+    <div class="quote-widget" id="quoteWidget">
+        <div class="quote-widget-header">
+            <span class="quote-label">Daily Wisdom</span>
+            <div class="quote-controls">
+                <button class="quote-refresh" id="quoteRefresh" aria-label="Get new quote">↻</button>
+                <button class="quote-minimize" id="quoteMinimize" aria-label="Close">×</button>
+            </div>
+        </div>
+        <div class="quote-text" id="quoteText">
+            "Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present."
+        </div>
+        <div class="quote-author" id="quoteAuthor">— Master Oogway</div>
+    </div>
+
     <script>
         // Mobile tooltip functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -507,6 +770,103 @@
                     });
                 }
             });
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.documentElement;
+        
+        // Check for saved theme preference
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // Quotes Rotator
+        const quotes = [
+            { text: "Yesterday is history, tomorrow is a mystery, but today is a gift. That is why it is called the present.", author: "Master Oogway" },
+            { text: "Your mind is like water. When it is agitated, it becomes difficult to see. But when you allow it to settle, the answer becomes clear.", author: "Master Oogway" },
+            { text: "The secret ingredient is nothing. To make something special, you just have to believe it's special.", author: "Mr. Ping" },
+            { text: "Inner peace comes from within. Do not seek it without.", author: "Buddha" },
+            { text: "The only way to make sense out of change is to plunge into it, move with it, and join the dance.", author: "Alan Watts" },
+            { text: "The mind is everything. What you think you become.", author: "Buddha" },
+            { text: "We are what we repeatedly do. Excellence, then, is not an act, but a habit.", author: "Aristotle" },
+            { text: "The unexamined life is not worth living.", author: "Socrates" },
+            { text: "Be yourself; everyone else is already taken.", author: "Oscar Wilde" },
+            { text: "The only true wisdom is in knowing you know nothing.", author: "Socrates" },
+            { text: "Technology is a useful servant but a dangerous master.", author: "Christian Lous Lange" },
+            { text: "The real problem is not whether machines think but whether humans do.", author: "B.F. Skinner" },
+            { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
+            { text: "The journey of a thousand miles begins with one step.", author: "Lao Tzu" },
+            { text: "What we think, we become.", author: "Margaret Thatcher" },
+            { text: "Life can only be understood backwards; but it must be lived forwards.", author: "Søren Kierkegaard" },
+            { text: "The purpose of life is not to be happy. It is to be useful, honorable, compassionate, to make some difference.", author: "Ralph Waldo Emerson" },
+            { text: "In the depth of winter, I finally learned that there was in me an invincible summer.", author: "Albert Camus" },
+            { text: "The cave you fear to enter holds the treasure you seek.", author: "Joseph Campbell" },
+            { text: "What lies behind us and what lies before us are tiny matters compared to what lies within us.", author: "Ralph Waldo Emerson" }
+        ];
+
+        const quoteText = document.getElementById('quoteText');
+        const quoteAuthor = document.getElementById('quoteAuthor');
+        const quoteRefresh = document.getElementById('quoteRefresh');
+
+        function getRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+            
+            // Fade out
+            quoteText.style.opacity = '0';
+            quoteAuthor.style.opacity = '0';
+            
+            setTimeout(() => {
+                quoteText.textContent = `"${quote.text}"`;
+                quoteAuthor.textContent = `— ${quote.author}`;
+                
+                // Fade in
+                quoteText.style.opacity = '1';
+                quoteAuthor.style.opacity = '1';
+            }, 300);
+        }
+
+        // Add transition to quote elements
+        quoteText.style.transition = 'opacity 0.3s ease';
+        quoteAuthor.style.transition = 'opacity 0.3s ease';
+
+        // Refresh quote on button click
+        quoteRefresh.addEventListener('click', getRandomQuote);
+
+        // Load random quote on page load
+        window.addEventListener('load', getRandomQuote);
+
+        // Quote widget toggle
+        const quoteWidget = document.getElementById('quoteWidget');
+        const quoteToggle = document.getElementById('quoteToggle');
+        const quoteMinimize = document.getElementById('quoteMinimize');
+        let isQuoteVisible = false;
+        
+        quoteToggle.addEventListener('click', () => {
+            isQuoteVisible = !isQuoteVisible;
+            quoteWidget.classList.toggle('visible');
+            if (isQuoteVisible) {
+                getRandomQuote();
+            }
+        });
+        
+        quoteMinimize.addEventListener('click', () => {
+            isQuoteVisible = false;
+            quoteWidget.classList.remove('visible');
+        });
+
+        // Close quote widget when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!quoteWidget.contains(e.target) && !quoteToggle.contains(e.target)) {
+                isQuoteVisible = false;
+                quoteWidget.classList.remove('visible');
+            }
         });
     </script>
 </body>
