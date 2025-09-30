@@ -853,6 +853,11 @@
     </footer>
 
     <script>
+        // Scroll to top on page load/reload
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        
         // Progress bar
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;

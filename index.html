@@ -730,6 +730,11 @@
     </div>
 
     <script>
+        // Scroll to top on page load/reload
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        
         // Mobile tooltip functionality
         document.addEventListener('DOMContentLoaded', function() {
             const iconWrappers = document.querySelectorAll('.icon-wrapper');

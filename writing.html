@@ -869,6 +869,11 @@
     </div>
 
     <script>
+        // Scroll to top on page load/reload
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        
         // Simple filtering functionality
         document.addEventListener('DOMContentLoaded', function() {
             const filterItems = document.querySelectorAll('.filter-item');
