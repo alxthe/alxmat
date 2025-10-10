@@ -329,6 +329,59 @@
             opacity: 0.8;
         }
 
+        /* Coming Soon Section */
+        .coming-soon-toggle {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .coming-soon-toggle:hover {
+            background: var(--hover-bg);
+        }
+
+        .toggle-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .toggle-icon {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .toggle-icon.expanded {
+            transform: rotate(180deg);
+        }
+
+        .toggle-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .toggle-count {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+            margin-left: 0.5rem;
+        }
+
+        .coming-soon-articles {
+            display: none;
+            margin-top: 2rem;
+        }
+
+        .coming-soon-articles.visible {
+            display: block;
+        }
+
 
         .entry-title {
             font-size: 1.4rem;
@@ -682,7 +735,7 @@
         </div>
 
         <div class="results-info">
-            showing <span id="resultsCount">10</span> writings
+            showing <span id="resultsCount">1</span> writing
         </div>
 
         <div class="writing-list">
@@ -708,6 +761,17 @@
                 </div>
             </article>
 
+            <!-- Coming Soon Toggle -->
+            <div class="coming-soon-toggle" id="comingSoonToggle">
+                <div class="toggle-header">
+                    <span class="toggle-text">view coming soon articles</span>
+                    <span class="toggle-count">(9)</span>
+                    <span class="toggle-icon" id="toggleIcon">▼</span>
+                </div>
+            </div>
+
+            <!-- Coming Soon Articles (Hidden by Default) -->
+            <div class="coming-soon-articles" id="comingSoonArticles">
             <article class="writing-entry" data-category="technology">
                 <div class="entry-header">
                     <div class="entry-meta">
@@ -889,6 +953,7 @@
                     </div>
                 </div>
             </article>
+            </div>
         </div>
 
         <div class="empty-state" style="display: none;">
@@ -1034,6 +1099,22 @@
             const newTheme = theme === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
+        });
+
+        // Coming Soon Articles Toggle
+        const comingSoonToggle = document.getElementById('comingSoonToggle');
+        const comingSoonArticles = document.getElementById('comingSoonArticles');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        comingSoonToggle.addEventListener('click', () => {
+            comingSoonArticles.classList.toggle('visible');
+            toggleIcon.classList.toggle('expanded');
+            
+            if (comingSoonArticles.classList.contains('visible')) {
+                comingSoonToggle.querySelector('.toggle-text').textContent = 'hide coming soon articles';
+            } else {
+                comingSoonToggle.querySelector('.toggle-text').textContent = 'view coming soon articles';
+            }
         });
     </script>
 </body>
