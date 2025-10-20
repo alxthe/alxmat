@@ -35,36 +35,36 @@
         
         /* CSS Variables for theming */
         :root {
-            --bg-color: #faf8f5;
-            --text-primary: #2c2825;
-            --text-secondary: #5c5551;
-            --text-tertiary: #8b7f73;
-            --accent-color: #829b88;
-            --border-color: rgba(0, 0, 0, 0.05);
-            --hover-bg: rgba(130, 155, 136, 0.1);
-            --section-bg: rgba(255, 255, 255, 0.3);
-            --entry-bg: rgba(255, 255, 255, 0.5);
+            --bg-color: #f9f7f4;
+            --text-primary: #1a1614;
+            --text-secondary: #4a4542;
+            --text-tertiary: #736b63;
+            --accent-color: #6b8f71;
+            --border-color: rgba(0, 0, 0, 0.06);
+            --hover-bg: rgba(107, 143, 113, 0.12);
+            --section-bg: rgba(255, 255, 255, 0.4);
+            --entry-bg: rgba(255, 255, 255, 0.6);
         }
 
         [data-theme="dark"] {
-            --bg-color: #1a1815;
-            --text-primary: #e8e3dd;
-            --text-secondary: #b5a99f;
-            --text-tertiary: #8b7f73;
-            --accent-color: #a3c4a9;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --hover-bg: rgba(163, 196, 169, 0.15);
-            --section-bg: rgba(0, 0, 0, 0.2);
-            --entry-bg: rgba(0, 0, 0, 0.3);
+            --bg-color: #1a1816;
+            --text-primary: #ebe7e0;
+            --text-secondary: #bfb7ac;
+            --text-tertiary: #8f8578;
+            --accent-color: #91b896;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --hover-bg: rgba(145, 184, 150, 0.15);
+            --section-bg: rgba(0, 0, 0, 0.25);
+            --entry-bg: rgba(0, 0, 0, 0.35);
         }
         
         body {
             font-family: 'Merriweather', Georgia, serif;
             background: var(--bg-color);
             color: var(--text-primary);
-            line-height: 1.8;
+            line-height: 1.85;
             overflow-x: hidden;
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 300;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
@@ -89,14 +89,14 @@
 
         /* Header */
         .article-header {
-            padding: 3rem 0 4rem;
+            padding: 4rem 0 5rem;
             background: linear-gradient(to bottom, var(--section-bg), transparent);
         }
 
         .header-container {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 2.5rem;
         }
 
         .back-link {
@@ -147,19 +147,19 @@
 
         h1 {
             font-family: 'Inter', sans-serif;
-            font-size: 2.5rem;
+            font-size: 2.75rem;
             font-weight: 700;
             color: var(--text-primary);
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.03em;
+            line-height: 1.15;
+            margin-bottom: 2rem;
+            letter-spacing: -0.035em;
         }
 
         .article-description {
             font-family: 'Arimo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.65;
             font-style: italic;
             font-weight: 400;
             letter-spacing: 0.01em;
@@ -215,50 +215,51 @@
 
         /* Main content */
         .article-content {
-            max-width: 680px;
+            max-width: 720px;
             margin: 0 auto;
-            padding: 0 2rem 4rem;
+            padding: 0 2.5rem 5rem;
         }
 
         .article-content p {
-            margin-bottom: 1.8rem;
+            margin-bottom: 2rem;
             color: var(--text-primary);
         }
 
         .article-content h2 {
             font-family: 'Inter', sans-serif;
-            font-size: 1.8rem;
+            font-size: 1.95rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 3rem 0 1.5rem;
-            letter-spacing: -0.02em;
+            margin: 3.5rem 0 1.75rem;
+            letter-spacing: -0.025em;
         }
 
         .article-content h3 {
             font-family: 'Inter', sans-serif;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: var(--text-primary);
-            margin: 2rem 0 1rem;
-            letter-spacing: -0.01em;
+            margin: 2.5rem 0 1.25rem;
+            letter-spacing: -0.015em;
         }
 
         .article-content blockquote {
-            margin: 2rem 0;
-            padding-left: 2rem;
-            border-left: 3px solid var(--accent-color);
+            margin: 2.5rem 0;
+            padding-left: 2.25rem;
+            border-left: 4px solid var(--accent-color);
             font-style: italic;
             color: var(--text-secondary);
+            font-size: 1.05em;
         }
 
         .article-content ul, .article-content ol {
-            margin-bottom: 1.8rem;
-            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+            padding-left: 1.75rem;
         }
 
         .article-content li {
-            margin-bottom: 0.8rem;
-            line-height: 1.8;
+            margin-bottom: 1rem;
+            line-height: 1.85;
         }
 
         .article-content a {
